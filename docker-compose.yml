@@ -1,4 +1,6 @@
 ---
+version: '3.8'
+
 services:
   healthchecks:
     environment:
@@ -24,6 +26,9 @@ services:
       SUPERUSER_PASSWORD:
       TZ:
     image: linuxserver/healthchecks:latest
+    ports:
+      - 8000:8000
+      # - 2525:2525
     restart: unless-stopped
     volumes:
       - ./config:/config
