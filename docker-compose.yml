@@ -1,0 +1,11 @@
+---
+services:
+  healthchecks:
+    environment:
+      PUID:
+      PGID:
+      TZ:
+    image: linuxserver/healthchecks:latest
+    restart: unless-stopped
+    volumes:
+      - ./config:/config
